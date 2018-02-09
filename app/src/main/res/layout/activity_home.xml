@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.happyghost.widgetstudy.HomeActivity">
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/rv_timemmachine"/>-->
-    <com.example.happyghost.widgetstudy.widget.ProgressCustomView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:id="@+id/sector_diagram"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        app:pc_text="跳过:5"
-        app:pc_time="5"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bt_animation"
-        android:text="开始"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_Rxbus"
+            android:text="我是接收者"
+            android:textSize="18sp"
+            android:textColor="#00ff00"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_Rxbus2"
+            android:text="我是接收者"
+            android:textSize="18sp"
+            android:textColor="#00ff00"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/bt_rxbus"
+            android:text="开启"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv_timemmachine"/>
+    <!--<com.example.happyghost.widgetstudy.widget.ProgressCustomView-->
+        <!--android:layout_width="180dp"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:id="@+id/sector_diagram"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--app:pc_text="跳过:5"-->
+        <!--app:pc_time="5"/>-->
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/bt_animation"-->
+        <!--android:text="开始"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"/>-->
 
 
-</RelativeLayout>
+</LinearLayout>

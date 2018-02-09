@@ -41,40 +41,39 @@ public class SplashActivity extends AppCompatActivity{
     }
 
     private void initData() {
+        //开始动画
         downTime.startAnimation();
+        //回调点击事件
         downTime.setPCviewOnClickListener(new ProgressCustomView.PCviewOnClickListener() {
             @Override
             public void onClick() {
                 startHomeActivity();
             }
         });
-        if(!isStart){
-            downTime(5).subscribe(new Observer<Integer>() {
-                @Override
-                public void onSubscribe(Disposable d) {
-                    if (isStart){
-                        d.dispose();
-                    }
-                }
+        //倒计时发送事件
+        downTime(5).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
 
-                @Override
-                public void onNext(Integer value) {
+            @Override
+            public void onNext(Integer value) {
 
-                    downTime.setmText("倒计时:"+value);
-                    downTime.setmTextColor(Color.parseColor("#000000"));
-                }
+                downTime.setmText("倒计时:"+value);
+                downTime.setmTextColor(Color.parseColor("#000000"));
+            }
 
-                @Override
-                public void onError(Throwable e) {
+            @Override
+            public void onError(Throwable e) {
                     startHomeActivity();
                 }
 
-                @Override
-                public void onComplete() {
+            @Override
+            public void onComplete() {
                     startHomeActivity();
                 }
-            });
-        }
+        });
+
     }
 
     private void startHomeActivity() {

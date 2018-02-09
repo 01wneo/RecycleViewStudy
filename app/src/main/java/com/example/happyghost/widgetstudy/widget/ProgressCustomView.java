@@ -60,6 +60,7 @@ public class ProgressCustomView extends View {
     }
 
     private void init(Context context, AttributeSet attrs) {
+        //对控件进行自定义属性的设置，提高控件的扩展性，可以自由控制控件的属性
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ProgressCustomView);
         mDownTime = typedArray.getInt(R.styleable.ProgressCustomView_pc_time, 5);
         mText = typedArray.getString(R.styleable.ProgressCustomView_pc_text);
@@ -69,6 +70,7 @@ public class ProgressCustomView extends View {
         mTextSize = typedArray.getDimension(R.styleable.ProgressCustomView_pc_textsize, 20);
         mArcSize = typedArray.getDimension(R.styleable.ProgressCustomView_pc_arc_size, 3);
         typedArray.recycle();
+        //初始化画笔
         mArcPaint = new Paint();
         mArcPaint.setAntiAlias(true);
         mArcPaint.setColor(mArcColor);
@@ -83,7 +85,7 @@ public class ProgressCustomView extends View {
         mTextPaint.setAntiAlias(true);
         mTextPaint.setColor(mTextColor);
         mTextPaint.setTextSize(mTextSize);
-
+        //对控件设置点击监听
         initClickListener();
     }
 
@@ -124,6 +126,7 @@ public class ProgressCustomView extends View {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        //获取控件的宽高
         mWidth = getWidth();
         mHeight = getHeight();
         //获取圆的半径
@@ -132,8 +135,11 @@ public class ProgressCustomView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        //绘制背景圆
         drawCir(canvas);
+        //绘制圆环
         drawArc(canvas);
+        //绘制文字
         drawText(canvas);
     }
 
@@ -159,7 +165,9 @@ public class ProgressCustomView extends View {
         cancelAnimation();
     }
 
-
+    /**
+     * 开始动画
+     */
     public void startAnimation(){
         if(mAnimation==null){
             mAnimation = ObjectAnimator.ofFloat(this,"mDynamicAngle",0,360);

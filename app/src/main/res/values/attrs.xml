@@ -11,5 +11,8 @@
         <attr name="pc_textsize" format="dimension"/>
         <attr name="pc_arc_size" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="CardImage">
+        <attr name="radius" format="reference|dimension" />
+    </declare-styleable>
 
 </resources>
